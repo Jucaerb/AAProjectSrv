@@ -88,10 +88,10 @@ class PredictController extends Controller
                     'setup_table' => $json['setup_table'],
                 ]);
             } else {
-                return response()->json(['error' => 'Solicitud fallida'], $response->status());
+                return response()->json(['error' => 'API error'], $response->status());
             }
         } catch (\Exception $e) {
-            return response()->json(['error' => 'Ocurrió un error: ' . $e->getMessage()]);
+            return response()->json(['error' => 'Critical error ' . $e->getMessage()]);
         }
     }
 }
