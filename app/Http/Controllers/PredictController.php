@@ -72,7 +72,7 @@ class PredictController extends Controller
 
             $response = Http::timeout(120)
                 ->attach('csv_file', file_get_contents($newCsvPath), $newCsvFileName)
-                ->post('http://127.0.0.1:8001/create-pycaret-clusters', [
+                ->post('http://127.0.0.1:8001/api/clustering/create-pycaret-clusters', [
                     'n_clusters' => $n_clusters,
                     'normalize' => $normalize,
                     'session_id' => $session_id,
