@@ -9,17 +9,12 @@
         <div class="container">
             <div class="bg-white shadow rounded">
                 <div class="p-4 text-dark">
-                    <!-- Formulario -->
                     <form id="submitForm" action="{{ route('csv.process') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-
-                        <!-- Campo para subir archivo CSV -->
                         <div class="mb-3">
-                            <label for="csv_file" class="form-label">Subir archivo CSV</label>
+                            <label for="csv_file" class="form-label">Choose CSV</label>
                             <input type="file" class="form-control" id="csv_file" name="csv_file" accept=".csv" required>
                         </div>
-
-                        <!-- Botón para enviar el formulario -->
                         <button type="submit" class="btn btn-secondary mt-3">Subir archivo</button>
                     </form>
                 </div>
